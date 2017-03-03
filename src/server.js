@@ -6,18 +6,16 @@ const app = express();
 
 
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.use('/api', require('../routes/api.js')(express)); //api routes
-
-app.use(bodyParser.json());  //parses json
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 
 }));
 
+app.use('/api', require('../routes/api')(express));
 
-
-const server = app.listen(port, () => {   //server listens to port 3000
+const server = app.listen(port, () => {
   console.log('Server Active On', port);
 });
