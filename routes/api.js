@@ -5,9 +5,22 @@ const express = require('express');
 module.exports = (express) => {
   const router = express.Router();
 
+/*-------------This route will lauch shortend url in browser-----------------------------------*/
+
+  router.get('/go/:shorturl', (req, res) => {
+    req.body.shorturl = req.params.shorturl;
+    url.findShortURL(req.body, (err) => {
+      res.status(500).json(err);
+    }, (data) => {
+      res.redirect('http://www.' + data.longurl);
+    });
+  });
+
+
+
 
 // READ and Find All URLS----------------------------------------------------//
-  router.get('/v1/url', (req, res) => {
+  router.get('/api/v1/url', (req, res) => {
     url.findAll((err) => {
 
       res.status(500).json(err);
@@ -18,7 +31,7 @@ module.exports = (express) => {
   });
 
 // READ and Find specific url by id---------------------------------------------------->
-  router.get('/v1/url/:id', (req, res) => {
+  router.get('/api/v1/url/:id', (req, res) => {
     req.body.id = req.params.id;
     url.find(req.body, (err) => {
 
@@ -31,7 +44,7 @@ module.exports = (express) => {
 
 
 // create and generate short url------------------------------------------------------------------->
-  router.post('/v1/url', (req, res) => {
+  router.post('/api/v1/url', (req, res) => {
     const generate = require('../src/util');
     req.body.shorturl = generate.returnStringGen();
     url.create(req.body, (err) => {
@@ -45,7 +58,7 @@ module.exports = (express) => {
 
 
     // update specific url by finding id ------------------------------------------------------->
-  router.post('/v1/url/:id', (req, res) => {
+  router.post('/api/v1/url/:id', (req, res) => {
       req.body.id = req.params.id;
     url.update(req.body, (err) => {
 
@@ -57,7 +70,7 @@ module.exports = (express) => {
   });
 
     // delete url specific url by finding id ----------------------------------------------------->
-  router.delete('/v1/url/:id', (req, res) => {
+  router.delete('/api/v1/url/:id', (req, res) => {
       req.body.id = req.params.id;
     url.destroy(req.body, (err) => {
 
