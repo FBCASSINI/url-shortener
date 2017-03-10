@@ -1,3 +1,4 @@
+
 ## Synopsis
 
 This is a url-shortener to shorten url links smaller.
@@ -105,3 +106,35 @@ brew services start mysql
 ## Screenshot with Postmon
 
 ![Postmon screenshot](http://i.imgur.com/RAJFESe.png)
+
+
+## UPDTAE V1.3.0
+
+To use the debug tool part of this app you will need to install supertest, mocha, chai, chalk
+
+```
+//mocha
+
+npm install mocha --save-dev
+
+// supertest
+
+npm install supertest --save-dev
+
+//chai
+
+npm install chai --save-dev
+
+//chalk
+
+npm install chalk --save
+```
+
+To turn on debug mode run this
+
+```
+debug=true mocha nodemon src/server.js
+
+```
+
+The debug logs are located in logs/log.log
