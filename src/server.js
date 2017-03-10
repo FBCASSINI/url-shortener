@@ -1,7 +1,7 @@
 /*------------------variables-----------------------------------------*/
 const express = require('express');
 const bodyParser = require('body-parser');
-const util = require('./util');
+const util = require('../lib/debug');
 const url = require('./models/url');
 const app = express();
 
@@ -15,8 +15,10 @@ app.use(bodyParser.urlencoded({
 
 }));
 
-app.use('/', require('../routes/api')(express));
+app.use('/', require('../test/__api')(express));
 
 const server = app.listen(port, () => {
-  console.log('Server Active On', port);
+  util.debug('Server Active On', port);
 });
+
+module.exports = server;
