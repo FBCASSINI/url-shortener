@@ -1,10 +1,8 @@
-/*------------------variables-----------------------------------------*/
+/* ------------------variables-----------------------------------------*/
 const express = require('express');
 const bodyParser = require('body-parser');
 const util = require('../lib/debug');
-const url = require('./models/url');
 const app = express();
-
 
 
 const port = process.env.PORT || 3000;
