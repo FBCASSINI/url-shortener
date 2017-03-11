@@ -32,7 +32,7 @@ module.exports = (express) => {
 
 // create and generate short url------------------------------------------------------------------->
   router.post('/api/v1/url', (req, res) => {
-    const generate = require('../../util');
+    const generate = require('../src/util');
     req.body.shorturl = generate.returnStringGen();
     url.create(req.body, (err) => {
       fs.appendFileSync('./logs/log.log', 'Error: Someone tried to generate a short url \n');
