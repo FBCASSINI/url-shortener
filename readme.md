@@ -138,3 +138,22 @@ debug=true mocha nodemon src/server.js
 ```
 
 The debug logs are located in logs/log.log
+
+## Update 1.4.0
+
+To use ESLint Please install eslint to atom by running this code.
+```
+apm install linter-eslint
+
+npm i --save-dev eslint
+
+npm i -g eslint
+
+
+```
+
+and run this code and to choose airbnb format
+```
+eslint --init
+
+```
