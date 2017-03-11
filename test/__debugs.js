@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const chalk = require('chalk');
 const fs = require('fs');
 
@@ -7,7 +6,7 @@ const success = chalk.green;
 const error = chalk.red;
 const warn = chalk.yellow;
 
-describe ('debug', () => {
+describe('debug', () => {
   it('testing Success', () => {
     console.log(success('Success Test: Passed!'));
   });

@@ -1,11 +1,10 @@
 const url = require('../src/models/url');
-const util = require('../src/util');
-const express = require('express');
+
 
 module.exports = (express) => {
   const router = express.Router();
 
-/*-------------This route will lauch shortend url in browser-----------------------------------*/
+/* -------------This route will lauch shortend url in browser-----------------------------------*/
 
   router.get('/go/:shorturl', (req, res) => {
     req.body.shorturl = req.params.shorturl;
@@ -17,15 +16,11 @@ module.exports = (express) => {
   });
 
 
-
-
 // READ and Find All URLS----------------------------------------------------//
   router.get('/api/v1/url', (req, res) => {
     url.findAll((err) => {
-
       res.status(500).json(err);
     }, (data) => {
-
       res.status(200).json(data);
     });
   });
@@ -34,10 +29,8 @@ module.exports = (express) => {
   router.get('/api/v1/url/:id', (req, res) => {
     req.body.id = req.params.id;
     url.find(req.body, (err) => {
-
       res.status(500).json(err);
     }, (data) => {
-
       res.status(200).json(data);
     });
   });
@@ -48,10 +41,8 @@ module.exports = (express) => {
     const generate = require('../src/util');
     req.body.shorturl = generate.returnStringGen();
     url.create(req.body, (err) => {
-
       res.status(500).json(err);
     }, (data) => {
-
       res.status(200).json(data);
     });
   });
@@ -59,24 +50,20 @@ module.exports = (express) => {
 
     // update specific url by finding id ------------------------------------------------------->
   router.post('/api/v1/url/:id', (req, res) => {
-      req.body.id = req.params.id;
+    req.body.id = req.params.id;
     url.update(req.body, (err) => {
-
       res.status(500).json(err);
     }, (data) => {
-
       res.status(200).json(data);
     });
   });
 
     // delete url specific url by finding id ----------------------------------------------------->
   router.delete('/api/v1/url/:id', (req, res) => {
-      req.body.id = req.params.id;
+    req.body.id = req.params.id;
     url.destroy(req.body, (err) => {
-
       res.status(500).json(err);
     }, (data) => {
-
       res.status(200).json(data);
     });
   });
