@@ -138,3 +138,60 @@ debug=true mocha nodemon src/server.js
 ```
 
 The debug logs are located in logs/log.log
+
+## Update 1.4.0
+
+To use ESLint Please install eslint to atom by running this code.
+```
+apm install linter-eslint
+
+npm i --save-dev eslint
+
+npm i -g eslint
+
+
+```
+
+and run this code and to choose airbnb format
+```
+eslint --init
+
+```
+
+## Install on server
+
+Install Latest ubunto on server and also latest Node.js.  
+
+Then download my recent url-shortner repo
+
+Then make a repo folder in your var folder  
+
+then make a .git file with --bare syntax. This will make you able to see the files inside the folder  
+
+Then you will need to add a post-receive file and make it an executable. and this code to it  
+```
+#!/bin/sh  
+GIT_WORK_TREE=/var/www/html git checkout -f
+
+```
+
+Then you will need to push the repo to the production server.  
+
+You can test the app by using postmon in json style like so  
+
+```
+
+{
+  "longurl": "newyorktimes.com"
+}
+
+```
+
+
+You can launch in your browser bu using this url
+
+```
+
+IpAddressofServer:3000/go/shorturl.
+
+```
