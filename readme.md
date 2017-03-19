@@ -196,5 +196,19 @@ You can launch in your browser bu using this url
 IpAddressofServer:3000/go/shorturl.
 
 ```
-=======
->>>>>>> 4819bb7caae597bcbd0e5a5b09cd9fbd63cb6b60
+## WORKFLOW - Setting up heroku with codeship and github
+
+1.) create a new app and connect the github account that you forked and then make a release branch and enable automatic deployment. check wait for ci to pass deploy.
+2.) then make a mysqlDB using ClearDB.
+3.) In config vars in settings add the environmental variables from your .env file to match the database host and credentials.
+4.)login into codeship and connect it to your github account repo you forked.
+5.) add the environmental variables from your mysql database from heroku to the cofig portion of codeship with mocha at then end of it.
+6.) Then update a push into your master.
+7.) Then your codeship will check your code to see if it passes. if it passes you will be able to merge to your github and deploy on heroku.
+8.) Set this app as staging pipeline
+
+## DEPLOYMENT - Heroku and GitHUB.
+
+1.) Login into heroku and make a new app.
+2.) connect to github and enable deployment so it will build the server.
+2.) Set a pipeline and make it deployment.
