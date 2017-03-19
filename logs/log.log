@@ -1,0 +1,7 @@
+
+() => {
+  console.log('Data was appended to file!');
+}Success: Someone accessed a single url 
+Success: Someone accessed all urls 
+Success: Someone generated a short url 
+Success: Someone accessed all urls 
