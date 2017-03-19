@@ -20,4 +20,4 @@ describe('debug', () => {
 
 fs.appendFile('./logs/log.log', () => {
   console.log('Data was appended to file!');
-});
+}); 
