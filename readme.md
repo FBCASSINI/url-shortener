@@ -211,4 +211,5 @@ IpAddressofServer:3000/go/shorturl.
 
 1.) Login into heroku and make a new app.  
 2.) connect to github and enable deployment so it will build the server.  
-2.) Set a pipeline and make it deployment.  
+3.) Create a mysqlDB with clearDB and in config vars in settings add environment variables of the .env file to match the database credentials clearDB gives you.  
+4.) Set a pipeline and make it deployment.  
