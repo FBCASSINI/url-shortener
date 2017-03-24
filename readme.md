@@ -221,3 +221,10 @@ Added a version number to crease the package.json file to a new version.
 The gulp file requires ./lib/VerNumberInc.js to get it working.
 
 Yo can add files to the folder in the gulp.js on line #7 and #34
+
+## Deploy enhancemnets 1 and 2 to heroku
+
+Click on deploy and choose master branch  
+This will deploy 2 features added by peers.
+1.) suppressing log files and make then console.log  
+2.) add version number bumber to bump the version in package.json.
