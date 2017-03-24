@@ -213,3 +213,11 @@ IpAddressofServer:3000/go/shorturl.
 2.) connect to github and enable deployment so it will build the server.  
 3.) Create a mysqlDB with clearDB and in config vars in settings add environment variables of the .env file to match the database credentials clearDB gives you.  
 4.) Set a pipeline and make it deployment.  
+
+## Version number increaser with gulp
+
+Added a version number to crease the package.json file to a new version.
+
+The gulp file requires ./lib/VerNumberInc.js to get it working.
+
+Yo can add files to the folder in the gulp.js on line #7 and #34
